@@ -53,7 +53,7 @@ $data = [
             </div>
             <?php } ?>
             <div>
-                <a class="hover:text-[#2d4da2]" href="">Connection</a>
+                <a class="hover:text-[#2d4da2]" href="connexion.php">Connexion</a>
             </div>
         </nav>
         <article class="grid lg:grid-cols-3 md:grid-cols-1 gap-5 w-full my-5 ">

@@ -20,22 +20,7 @@ $data = [
     ["id" => 7, "title" => "Barbecue cuit au froid", "userId" => 3, "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "like" => 9875],
     ["id" => 8, "title" => "Pizza pas cuite", "userId" => NULL, "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "like" => 41516],
 ];
-
-if (isset($_POST['submit'])) {
-    $user = $_POST['username'];
-}
- 
-
 ?>
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="Fr">
 
@@ -55,8 +40,8 @@ if (isset($_POST['submit'])) {
             <div>
                 <p>Bienvenu Jeune Cuisinier</p>
 
-                <?php if (isset($_POST['submit'])) { ?>
-                    <p> <?php echo $_SESSION['newuser']; ?></p>
+                <?php if (isset($_SESSION['newuser'])) { ?>
+                    <p> <?php echo $_SESSION['newuser']['username']; ?></p>
                 <?php } ?>
             </div>
             <div>
@@ -66,6 +51,7 @@ if (isset($_POST['submit'])) {
         </nav>
 
         <article class="grid lg:grid-cols-3 md:grid-cols-1 gap-5 w-full my-5 ">
+            <!-- Permet de controler les ID et si == Null l'affiche à l'écran -->
             <?php foreach ($data as $value) {
                 if ($value["userId"] === NULL) { ?>
                     <div class="w-full flex flex-col gap-3 border-2 border-withe shadow-2xl p-4">
@@ -79,8 +65,8 @@ if (isset($_POST['submit'])) {
                         </div>
                     </div>
                     <?php }
-                if (isset($_SESSION['newuser'])) {
-                    if ($_SESSION['newuser'] == $value["userId"]) { ?>
+                if (isset($_SESSION['newuser'])) { //Controle si la session est ouverte
+                    if ($_SESSION['newuser'] == $value["userId"]) { ?> <!-- Permet de controler les ID qui correspond à l'user et  l'affiche à l'écran -->
                         <div class="w-full flex flex-col gap-3 border-2 border-withe shadow-2xl p-4">
                             <h2 class="flex justify-center underline capitalize font-bold text-[#b74f2e]"><?php print $value["title"] ?></h2>
                             <p class="line-clamp-4 flex justify-center"><?php print $value["description"] ?></p>

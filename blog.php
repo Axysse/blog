@@ -44,7 +44,6 @@ $data = [
 
 <body class="bg-gray-300 max-h-full">
     <header class="flex justify-center">
-        <?php print $_SESSION['username']. 'la best' ?>;
         <img class="h-[50vh] w-[80%]" src="https://cdn.shopify.com/s/files/1/0558/2081/files/RATATOUILLE_final_1024x1024.png?v=1508953243)" alt="">
     </header>
     <main class="px-[15%] w-full">

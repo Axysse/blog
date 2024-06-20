@@ -35,7 +35,7 @@ $data = [
 
 <body class="bg-gray-300 max-h-full ">
     <header class="flex justify-center ">
-        <img class="lg:h-[50vh] lg:w-[80%] sd:w-10" src="https://cdn.shopify.com/s/files/1/0558/2081/files/RATATOUILLE_final_1024x1024.png?v=1508953243)" alt="">
+        <img class="lg:h-[50vh] lg:w-[80%] sm:w-10" src="https://cdn.shopify.com/s/files/1/0558/2081/files/RATATOUILLE_final_1024x1024.png?v=1508953243)" alt="">
     </header>
     <main class="px-[15%]  w-full">
         <nav class="flex justify-around items-center bg-[#b74f2e] h-[3em] text-white  ">
@@ -72,10 +72,7 @@ $data = [
                             <p><?php print $value["like"] ?></p>
                         </div>
                     </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> 4f4cc8251a0c462d66accf52101a0dda9c352684
                     <?php }
                 if (isset($_SESSION['newuser'])) { //Controle si la session est ouverte
                     if ($_SESSION['newuser']['id'] == $value["userId"]) { ?> <!-- Permet de controler les ID qui correspond à l'user et  l'affiche à l'écran -->

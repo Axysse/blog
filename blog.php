@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+
+
+
 $user = [
     ["id" => 1, "username" => "axoloto", "email" => "axolot@axoxo.fr", "password" => "jadorelesaxoloto", ["prenom" => "axel", "nom" => "lotto", "age" => "03/04/1997", "profilPic" => "https://pics.craiyon.com/2023-12-25/jEQgBgnqRUCSp7lag0q2Vg.webp", ["adresse" => "7 rue fdj", "zipCode" => 45123, "pays" => "France"]]],
     ["id" => 2, "username" => "ludicoolo", "email" => "ludivine@ludidi.com", "password" => "ukulele2010", ["prenom" => "ludivine", "nom" => "lele", "age" => "15/07/2001", "profilPic" => "https://static.wikia.nocookie.net/pokemon-phoenix-rising/images/6/69/Ludicolo.png/revision/latest?cb=20180603170019", ["adresse" => "14 martin luther king", "zipCode" => 86000, "pays" => "France"]]],
@@ -17,10 +21,12 @@ $data = [
     ["id" => 8, "title" => "Pizza pas cuite", "userId" => NULL, "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "like" => 41516],
 ];
 
+if(isset($_POST['submit'])){
 
 
+$user=$_POST['username'];
 
-
+}
 ?>
 
 
@@ -47,11 +53,13 @@ $data = [
     </header>
     <main class="px-[15%] w-full">
         <nav class="flex justify-around items-center bg-[#b74f2e] h-[3em] text-white ">
+            
+            <p>Bienvenu Jeune Cuisinier</p>
             <div>
-            <?php if(!isset($_POST['submit'])) {?>
-                <p>Bienvenu jeune cuisinier</p>
+            <?php if(isset($_POST['submit'])) {?>
+                <p> <?php echo $_SESSION['user']; ?></p>
             </div>
-            <?php } ?>
+            <?php } ?>  
             <div>
                 <a class="hover:text-[#2d4da2]" href="connexion.php">Connexion</a>
             </div>

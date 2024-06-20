@@ -65,6 +65,7 @@ if (isset($_POST['submit'])) {
             </div>
             <div>
                 <a class="hover:text-[#2d4da2]" href="connexion.php">Connexion</a>
+                <a href="profil.php">Profil</a>
             </div>
         </nav>
 

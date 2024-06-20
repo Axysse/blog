@@ -33,11 +33,11 @@ $data = [
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-300 max-h-full">
-    <header class="flex justify-center">
-        <img class="h-[50vh] w-[80%]" src="https://cdn.shopify.com/s/files/1/0558/2081/files/RATATOUILLE_final_1024x1024.png?v=1508953243)" alt="">
+<body class="bg-gray-300 max-h-full ">
+    <header class="flex justify-center ">
+        <img class="lg:h-[50vh] lg:w-[80%] sd:w-10" src="https://cdn.shopify.com/s/files/1/0558/2081/files/RATATOUILLE_final_1024x1024.png?v=1508953243)" alt="">
     </header>
-    <main class="px-[15%] w-full">
+    <main class="px-[15%]  w-full">
         <nav class="flex justify-around items-center bg-[#b74f2e] h-[3em] text-white  ">
             <div>
                 <div class="flex gap-2 items-baseline">
@@ -72,10 +72,7 @@ $data = [
                             <p><?php print $value["like"] ?></p>
                         </div>
                     </div>
-<<<<<<< HEAD
-=======
 
->>>>>>> e6bbab4b5be0d8818bcfc316dd39e9906bd7793b
                     <?php }
                 if (isset($_SESSION['newuser'])) { //Controle si la session est ouverte
                     if ($_SESSION['newuser']['id'] == $value["userId"]) { ?> <!-- Permet de controler les ID qui correspond à l'user et  l'affiche à l'écran -->
@@ -100,10 +97,10 @@ $data = [
 
 
     </main>
-    <footer class="flex justify-around gap-4 bg-[#b74f2e] h-[2em] text-white underline ">
-        <a href="">Condition utilisateur</a>
-        <a href="">Moyen de contacts</a>
-        <a href="">Les réseaux sociaux</a>
+    <footer class="flex justify-around gap-4 bg-[#b74f2e] h-[2em] text-white items-center  ">
+        <a class="hover:text-[#2d4da2] text-xs" href="">Condition utilisateur</a>
+        <a class="hover:text-[#2d4da2] text-xs" href="">Moyen de contacts</a>
+        <a class="hover:text-[#2d4da2] text-xs" href="">Les réseaux sociaux</a>
     </footer>
 
 

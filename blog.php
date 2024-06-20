@@ -72,10 +72,6 @@ $data = [
                             <p><?php print $value["like"] ?></p>
                         </div>
                     </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> e6bbab4b5be0d8818bcfc316dd39e9906bd7793b
                     <?php }
                 if (isset($_SESSION['newuser'])) { //Controle si la session est ouverte
                     if ($_SESSION['newuser']['id'] == $value["userId"]) { ?> <!-- Permet de controler les ID qui correspond à l'user et  l'affiche à l'écran -->

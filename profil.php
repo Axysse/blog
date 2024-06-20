@@ -23,14 +23,14 @@ if ($_SESSION['newuser']['id'] == $user[0]['id']) {
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="mx-[15%]">
+<body class="mx-[15%] bg-gray-300">
     <header>
         <img class="h-[50vh] w-[80%]"
             src="https://cdn.shopify.com/s/files/1/0558/2081/files/RATATOUILLE_final_1024x1024.png?v=1508953243)"
             alt="">
     </header>
-    <main class="bg-[#d1d5db]">
-        <nav class="flex justify-around items-center bg-[#b74f2e] h-[3em] text-white ">
+    <main class="bg-[#d1d5db] xl:flex xl:flex-col xl:justify-center xl:items-center">
+        <nav class="flex justify-around items-center bg-[#b74f2e] h-[3em] w-[100%] text-white ">
             <div>
                 <?php if (!isset($_SESSION['newuser'])) { ?>
                     <p>Bienvenue jeune cuisinier</p>
@@ -45,9 +45,8 @@ if ($_SESSION['newuser']['id'] == $user[0]['id']) {
 
             </div>
         </nav>
-        <section
-            class="flex flex-col align-center border-solid border-8 border-[#b74f2e] xl:flex-row xl:justify-around">
-            <article class="flex items-center gap-5">
+        <section class="flex flex-col align-center border-solid border-8 border-[#b74f2e] xl:flex-row xl:justify-around xl:w-[60%]">
+            <article class="flex items-center justify-center gap-5">
                 <?php
                 if (empty($_SESSION['newuser'])) {
                     print "Il faut se connecter";
@@ -61,19 +60,19 @@ if ($_SESSION['newuser']['id'] == $user[0]['id']) {
                     </article>
                     <article class="xl:border-solid xl:border-l-8 xl:border-[#b74f2e] xl:w-[100%]">
                         <?php if (isset($_SESSION['newuser']['username'])) { ?>
-                            <div class="border-solid border-b-4 border-[#b74f2e]">
+                            <div class="border-solid border-b-4 border-[#b74f2e] flex flex-col justify-center items-center h-[20%]">
                                 <p class="font-bold text-[#2d4da2] "> Infos du chef:</p>
                                 <p> <?php print $_SESSION['newuser']['username']; ?> </p>
                                 <p> <?php print $_SESSION['newuser']['email']; ?> </p>
 
                             </div>
-                            <div class="bg-yellow-400 border-solid border-b-4 border-[#b74f2e]">
+                            <div class="bg-yellow-400 border-solid border-b-4 border-[#b74f2e] flex flex-col justify-center">
                                 <p class="font-bold text-[#b74f2e]">Données personelles:</p>
                                 <p> <?php print $_SESSION['newuser'][0]['prenom']; ?> </p>
                                 <p> <?php print $_SESSION['newuser'][0]['nom']; ?> </p>
                                 <p>Date de naissance : <?php print $_SESSION['newuser'][0]['age']; ?> </p>
                             </div>
-                            <div class="bg-[#2d4da2]">
+                            <div class="bg-[#2d4da2] flex flex-col justify-center">
                                 <p class="font-bold text-yellow-600">Adresse:</p>
                                 <p> <?php print $_SESSION['newuser'][0][0]['adresse']; ?></p>
                                 <p> <?php print $_SESSION['newuser'][0][0]['zipCode']; ?></p>

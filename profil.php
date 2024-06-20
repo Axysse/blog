@@ -7,23 +7,6 @@ $user = [
 ];
 
 
-
-if (isset($_POST['submit'])) {
-    for ($i = 0; $i < count($user); $i++) {
-        if (($_POST['name']) == ($user[$i]['username']) && ($_POST['password']) == ($user[$i]['password'])) {
-            print "c'est bon" . $user[$i]['username'];
-            $log = $user[$i];
-            print $log['id'];
-            break;
-        } else {
-            print "Utilisateur inconnu.";
-        }
-    }
-}
-
-
-
-
 ?>
 
 <!DOCTYPE html>

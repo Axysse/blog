@@ -1,12 +1,14 @@
 <?php
 
+session_start();
+
 $user = [
     ["id" => 1, "username" => "axoloto", "email" => "axolot@axoxo.fr", "password" => "jadorelesaxoloto", ["prenom" => "axel", "nom" => "lotto", "age" => "03/04/1997", "profilPic" => "https://pics.craiyon.com/2023-12-25/jEQgBgnqRUCSp7lag0q2Vg.webp", ["adresse" => "7 rue fdj", "zipCode" => 45123, "pays" => "France"]]],
     ["id" => 2, "username" => "ludicoolo", "email" => "ludivine@ludidi.com", "password" => "ukulele2010", ["prenom" => "ludivine", "nom" => "lele", "age" => "15/07/2001", "profilPic" => "https://static.wikia.nocookie.net/pokemon-phoenix-rising/images/6/69/Ludicolo.png", ["adresse" => "14 martin luther king", "zipCode" => 86000, "pays" => "France"]]],
     ["id" => 3, "username" => "penksilla", "email" => "cicipre@gmail.fr", "password" => "karate", ["prenom" => "pricilla", "nom" => "katana", "age" => "28/06/1990", "profilPic" => "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Koboto_Santaro%2C_a_Japanese_military_commander_Wellcome_V0037661.jpg/220px-Koboto_Santaro%2C_a_Japanese_military_commander_Wellcome_V0037661.jpg", ["adresse" => "2 bis bushido sama", "zipCode" => 00154, "pays" => "Namibi"]]]
 ];
 
-if ($_SESSION['newuser']['id'] = $user[0]['id']) {
+if ($_SESSION['newuser']['id'] == $user[0]['id']) {
     print "C'est bon";
 }
 ?>
@@ -35,7 +37,12 @@ if ($_SESSION['newuser']['id'] = $user[0]['id']) {
                 </div>
             <?php } ?>
             <div>
+                <?php if (!isset($_SESSION['newuser'])) { ?>
                 <a class="hover:text-[#2d4da2]" href="connexion.php">Connexion</a>
+                <?php } else { ?>
+                    <a class="hover:text-[#2d4da2]" href="déconnexion.php">Déconnexion</a>
+                    <?php } ?> 
+
             </div>
         </nav>
         <section
@@ -47,8 +54,7 @@ if ($_SESSION['newuser']['id'] = $user[0]['id']) {
                 } else {
                     if (isset($_SESSION['newuser'])) {
                         ?>
-                        <img class="w-[15em] h-[15em]" src="<?php print $_SESSION[0]['profilPic'] ?>">
-                        <p class="text-xl"> <?php print $log['username'] ?></p>
+                        <img class="w-[15em] h-[15em]" src="<?php print $_SESSION['newuser'][0]['profilPic'] ?>"/>
                         <?php
 
                         ?>
@@ -65,7 +71,7 @@ if ($_SESSION['newuser']['id'] = $user[0]['id']) {
                                 <p class="font-bold text-[#b74f2e]">Données personelles:</p>
                                 <p> <?php print $_SESSION['newuser'][0]['prenom']; ?> </p>
                                 <p> <?php print $_SESSION['newuser'][0]['nom']; ?> </p>
-                                <p>Date de naissance : <?php print $log[0]['age']; ?> </p>
+                                <p>Date de naissance : <?php print $_SESSION['newuser'][0]['age']; ?> </p>
                             </div>
                             <div class="bg-[#2d4da2]">
                                 <p class="font-bold text-yellow-600">Adresse:</p>

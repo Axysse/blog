@@ -23,7 +23,7 @@ session_start();
 if (isset($_POST['submit'])) {
     for ($i = 0; $i < count($user); $i++) {
         if (($_POST['name']) == ($user[$i]['username']) && ($_POST['password']) == ($user[$i]['password'])) {
-            $_SESSION = $user[$i];
+            $_SESSION['newuser'] = $user[$i]['id'];
             print "c'est bon" . $_SESSION['username'];
             header('location: blog.php');
             break;

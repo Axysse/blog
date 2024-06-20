@@ -29,7 +29,7 @@ $user = [
         <nav class="flex justify-around items-center bg-[#b74f2e] h-[3em] text-white ">
             <div>
                 <?php if (!isset($_POST['submit'])) { ?>
-                    <p>Bienvenu jeune cuisinier</p>
+                    <p>Bienvenue jeune cuisinier</p>
                 </div>
             <?php } ?>
             <div>
@@ -40,36 +40,36 @@ $user = [
             class="flex flex-col align-center border-solid border-8 border-[#b74f2e] xl:flex-row xl:justify-around">
             <article class="flex items-center gap-5">
                 <?php
-                if (empty($log['username'])) {
+                if (empty($_SESSION['username'])) {
                     print "Il faut se connecter";
                 } else {
-                    if (isset($log['username'])) {
+                    if (isset($_SESSION['username'])) {
                         ?>
-                        <img class="w-[15em] h-[15em]" src="<?php print $log[0]['profilPic'] ?>">
+                        <img class="w-[15em] h-[15em]" src="<?php print $_SESSION[0]['profilPic'] ?>">
                         <p class="text-xl"> <?php print $log['username'] ?></p>
                         <?php
 
                         ?>
                     </article>
                     <article class="xl:border-solid xl:border-l-8 xl:border-[#b74f2e] xl:w-[100%]">
-                        <?php if (isset($log['username'])) { ?>
+                        <?php if (isset($_SESSION['username'])) { ?>
                             <div class="border-solid border-b-4 border-[#b74f2e]">
                                 <p class="font-bold text-[#2d4da2] "> Infos du chef:</p>
-                                <p> <?php print $log['username']; ?> </p>
-                                <p> <?php print $log['email']; ?> </p>
+                                <p> <?php print $_SESSION['username']; ?> </p>
+                                <p> <?php print $_SESSION['email']; ?> </p>
 
                             </div>
                             <div class="bg-yellow-400 border-solid border-b-4 border-[#b74f2e]">
                                 <p class="font-bold text-[#b74f2e]">Données personelles:</p>
-                                <p> <?php print $log[0]['prenom']; ?> </p>
-                                <p> <?php print $log[0]['nom']; ?> </p>
+                                <p> <?php print $_SESSION[0]['prenom']; ?> </p>
+                                <p> <?php print $_SESSION[0]['nom']; ?> </p>
                                 <p>Date de naissance : <?php print $log[0]['age']; ?> </p>
                             </div>
                             <div class="bg-[#2d4da2]">
                                 <p class="font-bold text-yellow-600">Adresse:</p>
-                                <p> <?php print $log[0][0]['adresse']; ?></p>
-                                <p> <?php print $log[0][0]['zipCode']; ?></p>
-                                <p> <?php print $log[0][0]['pays']; ?></p>
+                                <p> <?php print $_SESSION[0][0]['adresse']; ?></p>
+                                <p> <?php print $_SESSION[0][0]['zipCode']; ?></p>
+                                <p> <?php print $_SESSION[0][0]['pays']; ?></p>
                             </div>
                             <?php
                         }

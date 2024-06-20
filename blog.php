@@ -24,7 +24,7 @@ $data = [
 if (isset($_POST['submit'])) {
     $user = $_POST['username'];
 }
-
+ 
 
 ?>
 
@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) {
                 <p>Bienvenu Jeune Cuisinier</p>
 
                 <?php if (isset($_POST['submit'])) { ?>
-                    <p> <?php echo $_SESSION['user']; ?></p>
+                    <p> <?php echo $_SESSION['newuser']; ?></p>
                 <?php } ?>
             </div>
             <div>
@@ -80,7 +80,7 @@ if (isset($_POST['submit'])) {
                     </div>
                     <?php }
                 if (isset($_SESSION['newuser'])) {
-                    if ($_SESSION['newuser']["id"] == $value["userId"]) { ?>
+                    if ($_SESSION['newuser'] == $value["userId"]) { ?>
                         <div class="w-full flex flex-col gap-3 border-2 border-withe shadow-2xl p-4">
                             <h2 class="flex justify-center underline capitalize font-bold text-[#b74f2e]"><?php print $value["title"] ?></h2>
                             <p class="line-clamp-4 flex justify-center"><?php print $value["description"] ?></p>

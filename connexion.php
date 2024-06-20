@@ -22,10 +22,10 @@ session_start();
 
 if (isset($_POST['submit'])) {
     for ($i = 0; $i < count($user); $i++) {
-        if (($_POST['name']) == ($user[$i]['username'])) {
-            print "c'est bon" . $user[$i]['username'];
-            $log = $user[$i];
-            print $log['id'];
+        if (($_POST['name']) == ($user[$i]['username']) && ($_POST['password']) == ($user[$i]['password'])) {
+            $_SESSION = $user[$i];
+            print "c'est bon" . $_SESSION['username'];
+            header('location: blog.php');
             break;
         } else {
             print "Utilisateur inconnu.";
@@ -47,10 +47,10 @@ if (isset($_POST['submit'])) {
 
 <body>
     <header>
-
+        <a href="déconnexion.php">Déconnexion</a>
     </header>
     <main>
-        <form class="border-solid border-8 border-[#b74f2e]" action="profil.php" method="post">
+        <form class="border-solid border-8 border-[#b74f2e]" action="" method="post">
             <label for="name">Votre pseudo:</label>
             <input class="border-solid border-2 border-black" type="text" name="name" id="name">
             <label for="password">Votre mot de passe</label>

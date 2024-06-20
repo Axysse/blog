@@ -21,12 +21,7 @@ $data = [
     ["id" => 8, "title" => "Pizza pas cuite", "userId" => NULL, "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "like" => 41516],
 ];
 
-if(isset($_POST['submit'])){
 
-
-$user=$_POST['username'];
-
-}
 ?>
 
 
@@ -49,6 +44,7 @@ $user=$_POST['username'];
 
 <body class="bg-gray-300 max-h-full">
     <header class="flex justify-center">
+        <?php print $_SESSION['username']. 'la best' ?>;
         <img class="h-[50vh] w-[80%]" src="https://cdn.shopify.com/s/files/1/0558/2081/files/RATATOUILLE_final_1024x1024.png?v=1508953243)" alt="">
     </header>
     <main class="px-[15%] w-full">

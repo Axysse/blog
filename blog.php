@@ -33,11 +33,12 @@ $data = [
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-[#283D76] max-h-full ">
+<body class=" max-h-full ">
     <header class="flex justify-center ">
         <img class="" src="https://cdn.shopify.com/s/files/1/0558/2081/files/RATATOUILLE_final_1024x1024.png?v=1508953243)" alt="">
     </header>
-    <main class="lg:px-[15%]  md:px-[10%] sm:px-[5%] w-full">
+    <video autoplay="" muted="" loop="" playsinline=""><source src="Asset/Ratatouille - La soupe.mp4" ></video>
+    <main class="lg:px-[15%]  md:px-[10%] sm:px-[5%] w-full  ">
         <nav class="flex justify-around items-center bg-[#2d4da2] h-[3em] text-white mx-4 ">
             <div>
                 <div class="flex gap-2 items-baseline ">
@@ -99,6 +100,7 @@ $data = [
 
 
     </main>
+</video>
     <footer class="flex justify-around gap-4 bg-[#2d4da2] h-[2em] text-white items-center  ">
         <a class="hover:text-[#e9a719] text-xs" href="">Condition utilisateur</a>
         <a class="hover:text-[#e9a719] text-xs" href="">Moyen de contacts</a>

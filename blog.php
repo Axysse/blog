@@ -20,6 +20,8 @@ $data = [
     ["id" => 7, "title" => "Barbecue cuit au froid", "userId" => 3, "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "like" => 9875],
     ["id" => 8, "title" => "Pizza pas cuite", "userId" => NULL, "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "like" => 41516],
 ];
+
+
 ?>
 <!DOCTYPE html>
 <html lang="Fr">
@@ -36,17 +38,23 @@ $data = [
         <img class="h-[50vh] w-[80%]" src="https://cdn.shopify.com/s/files/1/0558/2081/files/RATATOUILLE_final_1024x1024.png?v=1508953243)" alt="">
     </header>
     <main class="px-[15%] w-full">
-        <nav class="flex justify-around items-center bg-[#b74f2e] h-[3em] text-white ">
+        <nav class="flex justify-around items-center bg-[#b74f2e] h-[3em] text-white  ">
             <div>
-                <p>Bienvenu Jeune Cuisinier</p>
-
-                <?php if (isset($_SESSION['newuser'])) { ?>
-                    <p> <?php echo $_SESSION['newuser']['username']; ?></p>
-                <?php } ?>
+                <div class="flex gap-2 items-baseline">
+                    <p class="text-2xl ">Bienvenu</p>
+                        <?php if (isset($_SESSION['newuser'])) { ?>
+                        <p class="text-3xl text-[#2d4da2] underline capitalize font-bold"> <?php echo $_SESSION['newuser']['username'] ?></p>
+                    <?php } ?>
+                </div>
             </div>
-            <div>
+            <div class="flex gap-3">
+                <?php if (!isset($_SESSION['newuser'])) { ?>
                 <a class="hover:text-[#2d4da2]" href="connexion.php">Connexion</a>
-                <a href="profil.php">Profil</a>
+                <?php } ?>
+                <a class="hover:text-[#2d4da2]" href="profil.php">Profil</a>
+                <?php if (isset($_SESSION['newuser'])) { ?>
+                <a class="hover:text-[#2d4da2]" href="déconnexion.php">Déconnexion</a>
+                <?php } ?>
             </div>
         </nav>
 
@@ -64,10 +72,9 @@ $data = [
                             <p><?php print $value["like"] ?></p>
                         </div>
                     </div>
-<<<<<<< HEAD
                     <?php }
                 if (isset($_SESSION['newuser'])) { //Controle si la session est ouverte
-                    if ($_SESSION['newuser'] == $value["userId"]) { ?> <!-- Permet de controler les ID qui correspond à l'user et  l'affiche à l'écran -->
+                    if ($_SESSION['newuser']['id'] == $value["userId"]) { ?> <!-- Permet de controler les ID qui correspond à l'user et  l'affiche à l'écran -->
                         <div class="w-full flex flex-col gap-3 border-2 border-withe shadow-2xl p-4">
                             <h2 class="flex justify-center underline capitalize font-bold text-[#b74f2e]"><?php print $value["title"] ?></h2>
                             <p class="line-clamp-4 flex justify-center"><?php print $value["description"] ?></p>
@@ -80,23 +87,9 @@ $data = [
                         </div>
             <?php
                     }
-=======
-            <?php } if (isset ($_SESSION['newuser'])) {
-                if ($_SESSION['newuser'] == $user['id']) { ?>
-                    <div class="w-full flex flex-col gap-3 border-2 border-withe shadow-2xl p-4">
-                    <h2 class="flex justify-center underline capitalize font-bold text-[#b74f2e]"><?php print $value["title"] ?></h2>
-                    <p class="line-clamp-4 flex justify-center"><?php print $value["description"] ?></p>
-                    <div class="flex gap-4">
-                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                            <path d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z" />
-                        </svg>
-                        <p><?php print $value["like"] ?></p>
-                    </div>
-                </div>
-                <?php 
->>>>>>> 9918eca1bf26b47f328f884a6487c918950505e2
+
                 }
-            }}
+            }
             ?>
 
         </article>

@@ -54,10 +54,11 @@ $data = [
                 <?php if (!isset($_SESSION['newuser'])) { ?>
                     <a class="hover:text-[#e9a719] " href="connexion.php">Connexion</a>
                 <?php } ?>
+                <?php if (isset($_SESSION['newuser'])) { ?>
                 <a class="hover:text-[#e9a719] " href="profil.php">Profil</a>
                 <?php if (isset($_SESSION['newuser'])) { ?>
                     <a class="hover:text-[#e9a719] " href="déconnexion.php">Déconnexion</a>
-                <?php } ?>
+                <?php } }?>
 
 
             </div>
@@ -81,7 +82,7 @@ $data = [
                     <?php }
                 if (isset($_SESSION['newuser'])) { //Controle si la session est ouverte
                     if ($_SESSION['newuser']['id'] == $value["userId"]) { ?> <!-- Permet de controler les ID qui correspond à l'user et  l'affiche à l'écran -->
-                        <div class="w-full flex flex-col gap-3 bg-white rounded-2xlgit p-4">
+                        <div class="w-full flex flex-col gap-3 bg-white rounded-2xl p-4">
                             <h2 class="flex justify-center underline capitalize font-bold text-[#e9a719]"><?php print $value["title"] ?></h2>
                             <p class="line-clamp-4 text-[#2d4da2] flex justify-center"><?php print $value["description"] ?></p>
                             <div class="flex gap-4">

@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_destroy();
-header("connexion.php");
+header('location:' .'connexion.php');
 exit();
 
 ?>

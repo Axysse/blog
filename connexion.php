@@ -44,7 +44,6 @@ if (isset($_POST['submit'])) {
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
 <body class=" max-h-full bg-[#283D76]">
     <header class="flex justify-center">
     <img class=""
@@ -63,17 +62,15 @@ if (isset($_POST['submit'])) {
                 <?php if (isset($_SESSION['newuser'])) { ?>
                 <a class="hover:text-[#e9a719] " href="profil.php">Profil</a>
                 <?php if (isset($_SESSION['newuser'])) { ?>
-                    <a class="hover:text-[#e9a719] " href="déconnexion.php">Déconnexion</a>
-                   
+                    <a class="hover:text-[#e9a719] " href="déconnexion.php">Déconnexion</a>   
                 <?php } }?> 
                 <a href="blog.php">Acceuil</a>
             </div>
         </nav>
-        <section class="lg:px-[15%]  md:px-[10%] sm:px-[5%] w-full max-h-full   ">
+        <section class="lg:px-[15%]  md:px-[10%] sm:px-[5%] w-full max-h-full ">
              <h2 class="text-4xl mt-10 text-[#e9a719] font-bold " >Connexion</h2>
             <form class="flex flex-col mt-[-4em] h-[60vh]  items-center  text-[#e9a719] bg-[#283D76]"  action="" method="post">
                 <div class="flex flex-col  h-[90%] justify-center underline ">
-                   
                     <div class="flex gap-4  p-8">
                         <label for="name">Votre pseudo:</label>
                         <input class="border-solid border-2 border-[#2d4da2] bg-[#EAE5E0]" type="text" name="name" id="name">
@@ -85,10 +82,6 @@ if (isset($_POST['submit'])) {
                 </div>
                 <button class="border-solid rounded-2xl w-[80%] bg-[#2d4da2] text-[#e9a719] " type="submit" value="login" name="submit">Login</button>
             </form>
-            <?php
-
-
-            ?>
         </section>
     </main>
     <footer class="flex justify-around gap-4 bg-[#2d4da2] h-[2em] text-white items-center  border-solid border-2 border-yellow-600 ">

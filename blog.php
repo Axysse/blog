@@ -37,12 +37,8 @@ $data = [
     <header class="flex justify-center ">
         <img class="" src="https://cdn.shopify.com/s/files/1/0558/2081/files/RATATOUILLE_final_1024x1024.png?v=1508953243)" alt="">
     </header>
-
-
     <main class="lg:px-[15%]  md:px-[10%] sm:px-[5%] w-full max-h-full ">
-
         <nav class="flex justify-around items-center bg-[#2d4da2] h-[3em] text-white mx-4  border-solid border-2 border-yellow-600">
-
             <div class="flex gap-2 items-baseline ">
                 <p class="text-2xl max-sm:text-base">Bienvenue</p>
                 <?php if (isset($_SESSION['newuser'])) { ?>
@@ -50,20 +46,17 @@ $data = [
                 <?php } ?>
             </div>
             <div class="flex gap-3 max-sm:text-xs">
-
                 <?php if (!isset($_SESSION['newuser'])) { ?>
                     <a class="hover:text-[#e9a719] " href="connexion.php">Connexion</a>
                 <?php } ?>
                 <?php if (isset($_SESSION['newuser'])) { ?>
-                <a class="hover:text-[#e9a719] " href="profil.php">Profil</a>
-                <?php if (isset($_SESSION['newuser'])) { ?>
-                    <a class="hover:text-[#e9a719] " href="déconnexion.php">Déconnexion</a>
-                <?php } }?>
-
-
+                    <a class="hover:text-[#e9a719] " href="profil.php">Profil</a>
+                    <?php if (isset($_SESSION['newuser'])) { ?>
+                        <a class="hover:text-[#e9a719] " href="déconnexion.php">Déconnexion</a>
+                <?php }
+                } ?>
             </div>
         </nav>
-
         <article class="grid lg:grid-cols-3 md:grid-cols-1 gap-5 w-full my-5 ">
             <!-- Permet de controler les ID et si == Null l'affiche à l'écran -->
             <?php foreach ($data as $value) {
@@ -78,7 +71,6 @@ $data = [
                             <p class=" text-[#e9a719]"><?php print $value["like"] ?></p>
                         </div>
                     </div>
-
                     <?php }
                 if (isset($_SESSION['newuser'])) { //Controle si la session est ouverte
                     if ($_SESSION['newuser']['id'] == $value["userId"]) { ?> <!-- Permet de controler les ID qui correspond à l'user et  l'affiche à l'écran -->
@@ -92,15 +84,8 @@ $data = [
                                 <p class=" text-[#e9a719]"><?php print $value["like"] ?></p>
                             </div>
                         </div>
-            <?php
-                    }
-                }
-            }
-            ?>
-
+            <?php }}} ?>
         </article>
-
-
     </main>
     </video>
     </section>
@@ -109,8 +94,5 @@ $data = [
         <a class="hover:text-[#e9a719] text-xs" href="">Moyen de contacts</a>
         <a class="hover:text-[#e9a719] text-xs" href="https://www.facebook.com/DisneylandParisfr/">Les réseaux sociaux</a>
     </footer>
-
-
 </body>
-
 </html>

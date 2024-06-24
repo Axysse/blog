@@ -28,7 +28,7 @@ if ($_SESSION['newuser']['id'] == $user[0]['id']) {
         <img class="h-[50vh] xl:w-[100%]"
             src="https://cdn.shopify.com/s/files/1/0558/2081/files/RATATOUILLE_final_1024x1024.png?v=1508953243)"
             alt="">
-        <nav class="flex flex-row justify-around gap-10 items-center bg-[#2d4da2] h-[3em] w-[100%] xl:w-[85%] text-white ">
+        <nav class="flex border-solid border-2 border-yellow-600 flex-row justify-around gap-10 items-center bg-[#2d4da2] h-[3em] w-[100%] xl:w-[85%] text-white ">
                 <?php if (!isset($_SESSION['newuser'])) { ?>
                     <p>Bienvenue jeune cuisinier</p>
             <?php } ?>
@@ -40,34 +40,35 @@ if ($_SESSION['newuser']['id'] == $user[0]['id']) {
                     </p>
                 <?php } ?>
             </section>   
-            <section class="flex flex-row justify-center gap-5 text-yellow-600>
+            <section class="flex flex-row justify-center gap-5">
                     <?php if (!isset($_SESSION['newuser'])) { ?>
                         <a href="connexion.php">Connexion</a>
             <?php } else { ?>
-                <a href="déconnexion.php">Déconnexion</a>
+                <a class="hover:text-[#e9a719] " href="déconnexion.php">Déconnexion</a>
             <?php } ?>
-            <a href="blog.php">Accueil</a>
+            <a class="hover:text-[#e9a719] " href="blog.php">Accueil</a>
             </section>
         </nav>
     </header>
 
     <main class="bg-[#283D76] xl:flex xl:flex-col xl:justify-center xl:items-center xl:pt-10 gap-10 w-full">
-        <section
-            class="flex flex-col align-center bg-white border-solid border-2 border-yellow-600 rounded-2xl shadow-2xl xl:flex-row xl:justify-around xl:w-[60%]">
+        <!-- Affichage de la carte profil -->
+        <section 
+            class="flex flex-col align-center bg-[#EAE5E0] border-solid border-2 border-yellow-600 rounded-2xl shadow-2xl xl:flex-row xl:justify-around xl:w-[60%]"> 
             <article class="flex items-center justify-center gap-5">
                 <?php
-                if (empty($_SESSION['newuser'])) {
+                if (empty($_SESSION['newuser'])) { //On controle en premier si l'utilisateur n'est pas connecté//
                     print "Il faut se connecter";
                 } else {
-                    if (isset($_SESSION['newuser'])) {
+                    if (isset($_SESSION['newuser'])) { //SINON (donc utilisateur reconnu)...//
                         ?>
                         <img class="w-[15em] h-[15em]" src="<?php print $_SESSION['newuser'][0]['profilPic'] ?>" />
                         <?php
 
                         ?>
                     </article>
-                    <article class="xl:border-solid xl:border-l-8 xl:border-yellow-600 xl:w-[100%]">
-                        <?php if (isset($_SESSION['newuser']['username'])) { ?>
+                    <article class="xl:border-solid xl:border-l-4 xl:border-yellow-600 xl:w-[100%]">
+                        <?php if (isset($_SESSION['newuser']['username'])) { ?> <!-- On recherche la concordance entre k'utilisateur et son contenu personnel-->
                             <div class="border-solid border-b-4 border-yellow-600 flex flex-col justify-center items-center h-[30%]">
                                 <p class="font-bold text-[#2d4da2] "> Infos du chef:</p>
                                 <p> <?php print $_SESSION['newuser']['username']; ?> </p>
@@ -101,10 +102,10 @@ if ($_SESSION['newuser']['id'] == $user[0]['id']) {
 
         </section>
     </main>
-    <footer class="flex justify-around gap-4 bg-[#b74f2e] h-[2em] xl:mt-10 text-white items-center  ">
-        <a class="hover:text-[#2d4da2] text-xs" href="">Condition utilisateur</a>
-        <a class="hover:text-[#2d4da2] text-xs" href="">Moyen de contacts</a>
-        <a class="hover:text-[#2d4da2] text-xs" href="">Les réseaux sociaux</a>
+    <footer class="flex border-solid border-2 border-yellow-600 justify-around gap-4 bg-[#2d4da2] h-[2em] xl:mt-10 text-white items-center  ">
+        <a class="hover:text-[[#e9a812]] text-xs" href="">Condition utilisateur</a>
+        <a class="hover:text-[[#e9a812]] text-xs" href="">Moyen de contacts</a>
+        <a class="hover:text-[[#e9a812] text-xs" href="">Les réseaux sociaux</a>
     </footer>
 </body>
 

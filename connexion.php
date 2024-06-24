@@ -38,32 +38,63 @@ if (isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
+<head >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <header>
-        <a href="déconnexion.php">Déconnexion</a>
+<body class=" max-h-full bg-[#283D76]">
+    <header class="flex justify-center">
+    <img class=""
+            src="https://cdn.shopify.com/s/files/1/0558/2081/files/RATATOUILLE_final_1024x1024.png?v=1508953243)"
+            alt="">
     </header>
-    <main>
-        <form class="border-solid border-8 border-[#b74f2e]" action="" method="post">
-            <label for="name">Votre pseudo:</label>
-            <input class="border-solid border-2 border-black" type="text" name="name" id="name">
-            <label for="password">Votre mot de passe</label>
-            <input class="border-solid border-2 border-black" type="text" name="password" id="password">
-            <button class="border-solid border-2 border-black" type="submit" value="login" name="submit">login</button>
-        </form>
-        <?php
+    <main class="lg:px-[15%]  md:px-[10%] sm:px-[5%] w-full max-h-full">
+    <nav class="flex justify-around items-center bg-[#2d4da2] h-[3em] text-white mx-4  border-solid border-2 border-yellow-600">
+            <div class="flex gap-2 items-baseline ">
+                <p class="text-2xl max-sm:text-base">Bienvenue</p>
+                <?php if (isset($_SESSION['newuser'])) { ?>
+                    <p class="text-3xl text-[#e9a719] underline capitalize font-bold max-sm:text-base"> <?php echo $_SESSION['newuser']['username'] ?></p>
+                <?php } ?>
+            </div>
+            <div class="flex gap-3 max-sm:text-xs">
+                <?php if (isset($_SESSION['newuser'])) { ?>
+                <a class="hover:text-[#e9a719] " href="profil.php">Profil</a>
+                <?php if (isset($_SESSION['newuser'])) { ?>
+                    <a class="hover:text-[#e9a719] " href="déconnexion.php">Déconnexion</a>
+                   
+                <?php } }?> 
+                <a href="blog.php">Acceuil</a>
+            </div>
+        </nav>
+        <section class="lg:px-[15%]  md:px-[10%] sm:px-[5%] w-full max-h-full   ">
+            
+            <form class="flex flex-col  h-[60vh]  items-center bg-[#283D76]"  action="" method="post">
+                <h2>Connexion</h2>
+                <div class="flex flex-col  h-[90%] justify-center  ">
+                    <div class="flex gap-4 text-[#e9a719] p-8">
+                        <label for="name">Votre pseudo:</label>
+                        <input class="border-solid border-2 border-[#2d4da2] bg-[#EAE5E0]" type="text" name="name" id="name">
+                    </div>
+                    <div class="flex gap-4 text-[#e9a719] border-y-2 p-8 border-[#e9a719] ">
+                        <label for="password">Votre mot de passe: </label>
+                        <input class="border-solid border-2 border-[#2d4da2] bg-[#EAE5E0] " type="text" name="password" id="password" >
+                    </div>
+                </div>
+                <button class="border-solid border-2 border-black w-[80%] bg-[#2d4da2] text-[#e9a719] " type="submit" value="login" name="submit">login</button>
+            </form>
+            <?php
 
 
-        ?>
+            ?>
+        </section>
     </main>
-    <footer>
-
+    <footer class="flex justify-around gap-4 bg-[#2d4da2] h-[2em] text-white items-center  border-solid border-2 border-yellow-600 ">
+        <a class="hover:text-[#e9a719] text-xs" href="">Condition utilisateur</a>
+        <a class="hover:text-[#e9a719] text-xs" href="">Moyen de contacts</a>
+        <a class="hover:text-[#e9a719] text-xs" href="">Les réseaux sociaux</a>
     </footer>
 </body>
 

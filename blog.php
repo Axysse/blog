@@ -41,7 +41,7 @@ $data = [
 
     <main class="lg:px-[15%]  md:px-[10%] sm:px-[5%] w-full max-h-full ">
 
-        <nav class="flex justify-around items-center bg-[#2d4da2] h-[3em] text-white mx-4 ">
+        <nav class="flex justify-around items-center bg-[#2d4da2] h-[3em] text-white mx-4  border-solid border-2 border-yellow-600">
 
             <div class="flex gap-2 items-baseline ">
                 <p class="text-2xl max-sm:text-base">Bienvenue</p>
@@ -68,7 +68,7 @@ $data = [
             <!-- Permet de controler les ID et si == Null l'affiche à l'écran -->
             <?php foreach ($data as $value) {
                 if ($value["userId"] === NULL) { ?>
-                    <div class="w-full flex flex-col gap-3  rounded-2xl bg-white p-4">
+                    <div class="w-full flex flex-col gap-3  rounded-2xl bg-[#EAE5E0] p-4">
                         <h2 class="flex justify-center  underline capitalize font-bold text-[#e9a719]"><?php print $value["title"] ?></h2>
                         <p class="text-[#2d4da2] line-clamp-4 flex justify-center"><?php print $value["description"] ?></p>
                         <div class="flex gap-4">
@@ -82,7 +82,7 @@ $data = [
                     <?php }
                 if (isset($_SESSION['newuser'])) { //Controle si la session est ouverte
                     if ($_SESSION['newuser']['id'] == $value["userId"]) { ?> <!-- Permet de controler les ID qui correspond à l'user et  l'affiche à l'écran -->
-                        <div class="w-full flex flex-col gap-3 bg-white rounded-2xl p-4">
+                        <div class="w-full flex flex-col gap-3 bg-[#EAE5E0] rounded-2xl p-4">
                             <h2 class="flex justify-center underline capitalize font-bold text-[#e9a719]"><?php print $value["title"] ?></h2>
                             <p class="line-clamp-4 text-[#2d4da2] flex justify-center"><?php print $value["description"] ?></p>
                             <div class="flex gap-4">
@@ -104,7 +104,7 @@ $data = [
     </main>
     </video>
     </section>
-    <footer class="flex justify-around gap-4 bg-[#2d4da2] h-[2em] text-white items-center  ">
+    <footer class="flex justify-around gap-4 bg-[#2d4da2] h-[2em] text-white items-center  border-solid border-2 border-yellow-600 ">
         <a class="hover:text-[#e9a719] text-xs" href="">Condition utilisateur</a>
         <a class="hover:text-[#e9a719] text-xs" href="">Moyen de contacts</a>
         <a class="hover:text-[#e9a719] text-xs" href="">Les réseaux sociaux</a>

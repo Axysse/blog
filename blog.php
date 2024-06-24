@@ -105,9 +105,9 @@ $data = [
     </video>
     </section>
     <footer class="flex justify-around gap-4 bg-[#2d4da2] h-[2em] text-white items-center  border-solid border-2 border-yellow-600 ">
-        <a class="hover:text-[#e9a719] text-xs" href="">Condition utilisateur</a>
+        <a class="hover:text-[#e9a719] text-xs" href="https://www.francenum.gouv.fr/guides-et-conseils/developpement-commercial/site-web/rediger-des-conditions-generales-dutilisation">Condition utilisateur</a>
         <a class="hover:text-[#e9a719] text-xs" href="">Moyen de contacts</a>
-        <a class="hover:text-[#e9a719] text-xs" href="">Les réseaux sociaux</a>
+        <a class="hover:text-[#e9a719] text-xs" href="https://www.facebook.com/DisneylandParisfr/">Les réseaux sociaux</a>
     </footer>
 
 

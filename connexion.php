@@ -70,20 +70,20 @@ if (isset($_POST['submit'])) {
             </div>
         </nav>
         <section class="lg:px-[15%]  md:px-[10%] sm:px-[5%] w-full max-h-full   ">
-            
-            <form class="flex flex-col  h-[60vh]  items-center bg-[#283D76]"  action="" method="post">
-                <h2>Connexion</h2>
-                <div class="flex flex-col  h-[90%] justify-center  ">
-                    <div class="flex gap-4 text-[#e9a719] p-8">
+             <h2 class="text-4xl mt-10 text-[#e9a719] font-bold " >Connexion</h2>
+            <form class="flex flex-col mt-[-4em] h-[60vh]  items-center  text-[#e9a719] bg-[#283D76]"  action="" method="post">
+                <div class="flex flex-col  h-[90%] justify-center underline ">
+                   
+                    <div class="flex gap-4  p-8">
                         <label for="name">Votre pseudo:</label>
                         <input class="border-solid border-2 border-[#2d4da2] bg-[#EAE5E0]" type="text" name="name" id="name">
                     </div>
-                    <div class="flex gap-4 text-[#e9a719] border-y-2 p-8 border-[#e9a719] ">
+                    <div class="flex gap-4  border-y-2 p-8 border-[#e9a719] ">
                         <label for="password">Votre mot de passe: </label>
                         <input class="border-solid border-2 border-[#2d4da2] bg-[#EAE5E0] " type="text" name="password" id="password" >
                     </div>
                 </div>
-                <button class="border-solid border-2 border-black w-[80%] bg-[#2d4da2] text-[#e9a719] " type="submit" value="login" name="submit">login</button>
+                <button class="border-solid rounded-2xl w-[80%] bg-[#2d4da2] text-[#e9a719] " type="submit" value="login" name="submit">Login</button>
             </form>
             <?php
 
@@ -92,9 +92,9 @@ if (isset($_POST['submit'])) {
         </section>
     </main>
     <footer class="flex justify-around gap-4 bg-[#2d4da2] h-[2em] text-white items-center  border-solid border-2 border-yellow-600 ">
-        <a class="hover:text-[#e9a719] text-xs" href="">Condition utilisateur</a>
+        <a class="hover:text-[#e9a719] text-xs" href="https://www.francenum.gouv.fr/guides-et-conseils/developpement-commercial/site-web/rediger-des-conditions-generales-dutilisation">Condition utilisateur</a>
         <a class="hover:text-[#e9a719] text-xs" href="">Moyen de contacts</a>
-        <a class="hover:text-[#e9a719] text-xs" href="">Les réseaux sociaux</a>
+        <a class="hover:text-[#e9a719] text-xs" href="https://www.facebook.com/DisneylandParisfr/">Les réseaux sociaux</a>
     </footer>
 </body>
 
